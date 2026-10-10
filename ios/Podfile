@@ -1,0 +1,98 @@
+# Resolve react_native_pods.rb with node to allow for hoisting
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
+
+# Disable Hermes to fix the script path issue
+ENV['USE_HERMES'] = '0'
+
+platform :ios, '15.5'
+prepare_react_native_project!
+
+linkage = ENV['USE_FRAMEWORKS']
+if linkage != nil
+  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  use_frameworks! :linkage => linkage.to_sym
+end
+
+# Force all Firebase dependencies to use version 11.11.0
+def firebase_pods
+  pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'FirebaseCore'
+  pod 'FirebaseCoreExtension'
+  pod 'FirebaseInstallations'
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseCrashlytics'
+  pod 'FirebaseMessaging'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseAuth'
+  pod 'GoogleSignIn', :modular_headers => true
+  pod 'GoogleSignInSwiftSupport'
+   pod 'React-Core', :path => '../node_modules/react-native/'
+  pod 'React-CoreModules', :path => '../node_modules/react-native/React/CoreModules'
+
+end
+
+target 'SpykHealth' do
+  firebase_pods
+
+  config = use_native_modules!
+
+  use_frameworks! :linkage => :static
+  $RNFirebaseAsStaticFramework = true
+  $RNFirebaseAnalyticsWithoutAdIdSupport = true
+
+  # Changed hermes_enabled to false to resolve the script path issue
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :hermes_enabled => false,
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  post_install do |installer|
+    # Fix BoringSSL-GRPC compilation issue
+    installer.pods_project.targets.each do |target|
+      if target.name == "BoringSSL-GRPC"
+        target.build_configurations.each do |config|
+          # Remove the problematic -G flag
+          config.build_settings['OTHER_CFLAGS'] ||= ['$(inherited)']
+          config.build_settings['OTHER_CFLAGS'] = config.build_settings['OTHER_CFLAGS'].reject { |f| f == '-G' }
+          config.build_settings['OTHER_CFLAGS'] = config.build_settings['OTHER_CFLAGS'].reject { |f| f.include?('-G') }
+        end
+      end
+
+      # Fix signing issues in Xcode 14+
+      if target.respond_to?(:product_type) && target.product_type == "com.apple.product-type.bundle"
+        target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
+
+      # Add this to fix potential build issues with Xcode 15+
+      if target.respond_to?(:product_type) && target.product_type == "com.apple.product-type.framework"
+        target.build_configurations.each do |config|
+          config.build_settings['DEAD_CODE_STRIPPING'] = 'YES'
+        end
+      end
+    end
+
+    # Add this to fix potential build issues with React Native
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'RCT_NEW_ARCH_ENABLED=0'
+      end
+    end
+
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false
+    )
+  end
+end

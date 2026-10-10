@@ -1,0 +1,72 @@
+{
+  "project_info": {
+    "project_number": "806922605148",
+    "firebase_url": "https://AuraCore-app-cc6d4-default-rtdb.firebaseio.com",
+    "project_id": "AuraCore-app-cc6d4",
+    "storage_bucket": "AuraCore-app-cc6d4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806922605148:android:33040e1b608ed35efa8c99",
+        "android_client_info": {
+          "package_name": "com.devamitch.HealthPulse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806922605148-9u6fpti47ulck46magkcquqtbc0j1iji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devamitch.HealthPulse",
+            "certificate_hash": "b6cc932976e25e323b51827171a2d7fddab17b2a"
+          }
+        },
+        {
+          "client_id": "806922605148-jo2bi8isag5ker9dstkmuj67eoolie93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devamitch.HealthPulse",
+            "certificate_hash": "18df773009636f9417c6e709f4eeafbe3b73c068"
+          }
+        },
+        {
+          "client_id": "806922605148-o6ni3t6pgcvh34aoa0st9k5dab97ufgo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devamitch.HealthPulse",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "806922605148-lvhs3rf1aso3ar2eim8f9nptcg3ukmiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy5QypsWuD0s5b3KuiURiUwhze4gjcAXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806922605148-enn313eeun91f13vc5jk5cpsf2k7qdoe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "806922605148-1jeqi9lcf88ddk0cmudd0l24peqri14b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devamitch.HealthPulse",
+                "app_store_id": "6744074233"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

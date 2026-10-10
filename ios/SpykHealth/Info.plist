@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>HealthPulse Health</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>google</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.806922605148-1jeqi9lcf88ddk0cmudd0l24peqri14b</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.devamitch.HealthPulse</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>HealthPulse</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<true/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>google</string>
+		<string>googlechrome</string>
+		<string>googleusercontent</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<key>NSAllowsArbitraryLoadsInWebContent</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict/>
+	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Bluetooth may be used to connect optional peripherals during workouts. This is optional and only used when you connect a device.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Calendar access is requested only if you choose to save scheduled workouts or reminders to your calendar.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>HealthPulse Health uses the camera to track posture and estimate calories during workouts you choose to start.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Contacts access is optional and only used when you explicitly choose to share progress with a contact.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>HealthPulse Health reads select Health data (steps, heart rate, activity) only when you opt in so we can provide personalized insights. You can revoke access any time in Health settings.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>HealthPulse Health saves your workouts and calories burned to Health app so data stays synced.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location helps track outdoor workouts and personalize in-app stats.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microphone enables voice commands so you can control workouts hands-free.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We request permission only if you choose to save images generated or annotated within the app to your photo library.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo library access lets you save and share your fitness progress photos.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Speech recognition helps convert voice commands to actions on workout and meditation screens.</string>
+	<key>NSUserNotificationUsageDescription</key>
+	<string>This app uses notifications to remind you about important events.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>We may request permission to track usage across apps to improve features and analytics. We do not sell personal data. You can change this anytime in Settings.</string>
+	<key>RCTNewArchEnabled</key>
+	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AntDesign.ttf</string>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+		<string>FontAwesome6_Brands.ttf</string>
+		<string>FontAwesome6_Regular.ttf</string>
+		<string>FontAwesome6_Solid.ttf</string>
+		<string>Foundation.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
+		<string>Octicons.ttf</string>
+		<string>Zocial.ttf</string>
+		<string>Fontisto.ttf</string>
+		<string>Aptos-Black.ttf</string>
+		<string>Aptos-Bold.ttf</string>
+		<string>Aptos-ExtraBold.ttf</string>
+		<string>Aptos-Light.ttf</string>
+		<string>Aptos-Regular.ttf</string>
+		<string>Aptos-SemiBold.ttf</string>
+		<string>Aquatico-Regular.ttf</string>
+		<string>Inter-Black.ttf</string>
+		<string>Inter-Bold.ttf</string>
+		<string>Inter-ExtraBold.ttf</string>
+		<string>Inter-ExtraLight.ttf</string>
+		<string>Inter-Light.ttf</string>
+		<string>Inter-Medium.ttf</string>
+		<string>Inter-Regular.ttf</string>
+		<string>Inter-SemiBold.ttf</string>
+		<string>Inter-Thin.ttf</string>
+		<string>NotoSans.ttf</string>
+		<string>Nunito-Black.ttf</string>
+		<string>Nunito-Bold.ttf</string>
+		<string>Nunito-ExtraBold.ttf</string>
+		<string>Nunito-ExtraLight.ttf</string>
+		<string>Nunito-Light.ttf</string>
+		<string>Nunito-Medium.ttf</string>
+		<string>Nunito-Regular.ttf</string>
+		<string>Nunito-SemiBold.ttf</string>
+		<string>Urbanist-Italic.ttf</string>
+		<string>Urbanist-Regular.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+		<string>fetch</string>
+	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>aps-environment</key>
+	<string>production</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+    <string>google</string>
+    <string>googlechrome</string>
+    <string>googleusercontent</string>
+	</array>
+</dict>
+</plist>
